@@ -3,40 +3,30 @@
 \docType{data}
 \name{aicha}
 \alias{aicha}
-\alias{aicha_3d}
-\title{aicha atlas}
+\title{AICHA Atlas (Atlas of Intrinsic Connectivity of Homotopic Areas)}
 \format{
-An object of class \code{brain_atlas} of length 4.
-
-An object of class \code{ggseg3d_atlas} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 4 rows and 4 columns.
+A \link[ggseg.formats:ggseg_atlas]{ggseg.formats::ggseg_atlas} object (cortical).
 }
 \usage{
-aicha
-
-aicha_3d
+data(aicha)
 }
 \description{
-The original volmetric atlas in MNI space was projected for fsaverage using the 
-CBIG lab's registration fusion 
-This is not the complete aicha atlas, as it is missing subcortical areas defined 
-by that atlas. 
-FreeSurfer annot files for this parcellation
-was obtained from (\href{https://github.com/faskowit/multiAtlasTT}{faskowit/multiAtlasTT})
+Brain atlas for the AICHA cortical parcellation with 342 regions.
+The original volumetric atlas in MNI space was projected to fsaverage
+using the CBIG lab's registration fusion. Contains both 2D polygon
+geometry for \code{\link[ggseg:ggbrain]{ggseg::geom_brain()}} and 3D vertex indices for
+\code{\link[ggseg3d:ggseg3d]{ggseg3d::ggseg3d()}}.
 }
 \examples{
 data(aicha)
-data(aicha_3d)
+aicha
 }
 \references{
-Joliot, M., Jobard, G., Naveau, M., Delcroix, N., Petit, L., Zago, L., ... & Tzourio-Mazoyer, N. (2015).
-   AICHA: An atlas of intrinsic connectivity of homotopic areas. 
-   Journal of neuroscience methods, 254, 46-59.
-    (\href{https://pubmed.ncbi.nlm.nih.gov/26213217/}{PubMed})
-    
-\itemize{
- \item{aicha}{ - aicha atlas}
- \item{aicha_3d}{ - aicha 3d mesh atlas}
+Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L,
+... & Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic
+connectivity of homotopic areas. \emph{Journal of Neuroscience Methods},
+254, 46-59.
+\doi{10.1016/j.jneumeth.2015.07.013}
 }
-}
-\concept{ggseg_atlases ggseg3d_atlases}
+\concept{ggseg_atlases}
 \keyword{datasets}
