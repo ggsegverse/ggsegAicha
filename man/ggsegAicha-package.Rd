@@ -13,8 +13,8 @@ AICHA (Atlas of Intrinsic Connectivity of Homotopic Areas) atlas for the 'ggseg'
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ggseg/ggsegAicha}
-  \item Report bugs at \url{https://github.com/ggseg/ggsegAicha/issues}
+  \item \url{https://github.com/ggsegverse/ggsegAicha}
+  \item Report bugs at \url{https://github.com/ggsegverse/ggsegAicha/issues}
 }
 
 }

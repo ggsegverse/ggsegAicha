@@ -15,6 +15,7 @@
 #'   \doi{10.1016/j.jneumeth.2015.07.013}
 #'
 #' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @import ggseg.formats
 #' @export
 #' @examples
 #' aicha()

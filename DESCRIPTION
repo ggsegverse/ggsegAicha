@@ -12,7 +12,8 @@ Description: AICHA (Atlas of Intrinsic Connectivity of Homotopic Areas) atlas
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends:
-    R (>= 3.5),
+    R (>= 3.5)
+Imports:
     ggseg.formats
 Suggests:
     ggseg,
