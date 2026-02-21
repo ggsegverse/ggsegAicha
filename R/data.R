@@ -6,10 +6,6 @@
 #' geometry for [ggseg::geom_brain()] and 3D vertex indices for
 #' [ggseg3d::ggseg3d()].
 #'
-#' @docType data
-#' @name aicha
-#' @usage data(aicha)
-#' @keywords datasets
 #' @family ggseg_atlases
 #'
 #' @references Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L,
@@ -18,8 +14,8 @@
 #'   254, 46-59.
 #'   \doi{10.1016/j.jneumeth.2015.07.013}
 #'
-#' @format A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @export
 #' @examples
-#' data(aicha)
-#' aicha
-"aicha"
+#' aicha()
+aicha <- function() .aicha

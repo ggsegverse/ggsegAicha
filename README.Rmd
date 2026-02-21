@@ -58,7 +58,7 @@ library(ggseg)
 library(ggseg3d)
 library(ggsegAicha)
 
-plot(aicha) +
+plot(aicha()) +
   theme(legend.position = "bottom", 
         legend.text = element_text(size = 9)) +
   guides(fill = guide_legend(ncol = 6))
@@ -67,14 +67,14 @@ plot(aicha) +
 
 ```{r "noneval", eval=FALSE}
 library(dplyr)
-ggseg3d(atlas = aicha_3d) %>% 
+ggseg3d(atlas = aicha()) %>% 
   add_glassbrain() %>% 
   pan_camera("right lateral")
 ```
 
 ```{r "orca", include=FALSE}
 library(dplyr)
-p <- ggseg3d(atlas = aicha_3d) %>%
+p <- ggseg3d(atlas = aicha()) %>%
   add_glassbrain(hemisphere = "left")%>%
   pan_camera("right lateral") %>%
   plotly::add_annotations( text="Screen capture",
