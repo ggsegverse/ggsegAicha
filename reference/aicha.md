@@ -1,0 +1,389 @@
+# AICHA Atlas (Atlas of Intrinsic Connectivity of Homotopic Areas)
+
+Brain atlas for the AICHA cortical parcellation with 342 regions. The
+original volumetric atlas in MNI space was projected to fsaverage using
+the CBIG lab's registration fusion. Contains both 2D polygon geometry
+for
+[`ggseg::geom_brain()`](https://ggsegverse.github.io/ggseg/reference/ggbrain.html)
+and 3D vertex indices for
+[`ggseg3d::ggseg3d()`](https://lcbc-uio.github.io/ggseg3d//reference/ggseg3d.html).
+
+## Usage
+
+``` r
+aicha()
+```
+
+## Value
+
+A
+[ggseg.formats::ggseg_atlas](https://ggsegverse.github.io/ggseg.formats/reference/ggseg_atlas.html)
+object (cortical).
+
+## References
+
+Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L, ... &
+Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic connectivity of
+homotopic areas. *Journal of Neuroscience Methods*, 254, 46-59.
+[doi:10.1016/j.jneumeth.2015.07.013](https://doi.org/10.1016/j.jneumeth.2015.07.013)
+
+## Examples
+
+``` r
+aicha()
+#> 
+#> ── aicha ggseg atlas ───────────────────────────────────────────────────────────
+#> Type: cortical
+#> Regions: 172
+#> Hemispheres: left, right
+#> Views: lateral, medial
+#> Palette: ✔
+#> Rendering: ✔ ggseg
+#> ✔ ggseg3d (vertices)
+#> ────────────────────────────────────────────────────────────────────────────────
+#> # A tibble: 342 × 3
+#>     hemi  region                 label                      
+#>     <chr> <chr>                  <chr>                      
+#>   1 left  G_Frontal_Sup-1        lh_G_Frontal_Sup-1-L       
+#>   2 left  G_Frontal_Sup-2        lh_G_Frontal_Sup-2-L       
+#>   3 left  G_Frontal_Sup-3        lh_G_Frontal_Sup-3-L       
+#>   4 left  S_Sup_Frontal-1        lh_S_Sup_Frontal-1-L       
+#>   5 left  S_Sup_Frontal-2        lh_S_Sup_Frontal-2-L       
+#>   6 left  S_Sup_Frontal-3        lh_S_Sup_Frontal-3-L       
+#>   7 left  S_Sup_Frontal-4        lh_S_Sup_Frontal-4-L       
+#>   8 left  S_Sup_Frontal-5        lh_S_Sup_Frontal-5-L       
+#>   9 left  S_Sup_Frontal-6        lh_S_Sup_Frontal-6-L       
+#>  10 left  G_Frontal_Mid-1        lh_G_Frontal_Mid-1-L       
+#>  11 left  G_Frontal_Mid-2        lh_G_Frontal_Mid-2-L       
+#>  12 left  G_Frontal_Mid-3        lh_G_Frontal_Mid-3-L       
+#>  13 left  G_Frontal_Mid-4        lh_G_Frontal_Mid-4-L       
+#>  14 left  G_Frontal_Mid-5        lh_G_Frontal_Mid-5-L       
+#>  15 left  S_Inf_Frontal-1        lh_S_Inf_Frontal-1-L       
+#>  16 left  S_Inf_Frontal-2        lh_S_Inf_Frontal-2-L       
+#>  17 left  G_Frontal_Inf_Tri-1    lh_G_Frontal_Inf_Tri-1-L   
+#>  18 left  G_Frontal_Mid_Orb-1    lh_G_Frontal_Mid_Orb-1-L   
+#>  19 left  G_Frontal_Mid_Orb-2    lh_G_Frontal_Mid_Orb-2-L   
+#>  20 left  G_Frontal_Inf_Orb-1    lh_G_Frontal_Inf_Orb-1-L   
+#>  21 left  G_Frontal_Inf_Orb-2    lh_G_Frontal_Inf_Orb-2-L   
+#>  22 left  S_Orbital-1            lh_S_Orbital-1-L           
+#>  23 left  S_Orbital-2            lh_S_Orbital-2-L           
+#>  24 left  S_Precentral-1         lh_S_Precentral-1-L        
+#>  25 left  S_Precentral-2         lh_S_Precentral-2-L        
+#>  26 left  S_Precentral-3         lh_S_Precentral-3-L        
+#>  27 left  S_Precentral-4         lh_S_Precentral-4-L        
+#>  28 left  S_Precentral-5         lh_S_Precentral-5-L        
+#>  29 left  S_Precentral-6         lh_S_Precentral-6-L        
+#>  30 left  S_Rolando-1            lh_S_Rolando-1-L           
+#>  31 left  S_Rolando-2            lh_S_Rolando-2-L           
+#>  32 left  S_Rolando-3            lh_S_Rolando-3-L           
+#>  33 left  S_Rolando-4            lh_S_Rolando-4-L           
+#>  34 left  S_Postcentral-1        lh_S_Postcentral-1-L       
+#>  35 left  S_Postcentral-2        lh_S_Postcentral-2-L       
+#>  36 left  S_Postcentral-3        lh_S_Postcentral-3-L       
+#>  37 left  G_Parietal_Sup-1       lh_G_Parietal_Sup-1-L      
+#>  38 left  G_Parietal_Sup-2       lh_G_Parietal_Sup-2-L      
+#>  39 left  G_Parietal_Sup-3       lh_G_Parietal_Sup-3-L      
+#>  40 left  G_Parietal_Sup-4       lh_G_Parietal_Sup-4-L      
+#>  41 left  G_Parietal_Sup-5       lh_G_Parietal_Sup-5-L      
+#>  42 left  G_Supramarginal-1      lh_G_Supramarginal-1-L     
+#>  43 left  G_SupraMarginal-2      lh_G_SupraMarginal-2-L     
+#>  44 left  G_Supramarginal-3      lh_G_Supramarginal-3-L     
+#>  45 left  G_Supramarginal-4      lh_G_Supramarginal-4-L     
+#>  46 left  G_SupraMarginal-5      lh_G_SupraMarginal-5-L     
+#>  47 left  G_SupraMarginal-6      lh_G_SupraMarginal-6-L     
+#>  48 left  G_SupraMarginal-7      lh_G_SupraMarginal-7-L     
+#>  49 left  G_Angular-1            lh_G_Angular-1-L           
+#>  50 left  G_Angular-2            lh_G_Angular-2-L           
+#>  51 left  G_Angular-3            lh_G_Angular-3-L           
+#>  52 left  G_Parietal_Inf-1       lh_G_Parietal_Inf-1-L      
+#>  53 left  S_Intraparietal-1      lh_S_Intraparietal-1-L     
+#>  54 left  S_Intraparietal-2      lh_S_Intraparietal-2-L     
+#>  55 left  S_Intraparietal-3      lh_S_Intraparietal-3-L     
+#>  56 left  S_Intraoccipital-1     lh_S_Intraoccipital-1-L    
+#>  57 left  G_Occipital_Pole-1     lh_G_Occipital_Pole-1-L    
+#>  58 left  G_Occipital_Lat-1      lh_G_Occipital_Lat-1-L     
+#>  59 left  G_Occipital_Lat-2      lh_G_Occipital_Lat-2-L     
+#>  60 left  G_Occipital_Lat-3      lh_G_Occipital_Lat-3-L     
+#>  61 left  G_Occipital_Lat-4      lh_G_Occipital_Lat-4-L     
+#>  62 left  G_Occipital_Lat-5      lh_G_Occipital_Lat-5-L     
+#>  63 left  G_Occipital_Sup-2      lh_G_Occipital_Sup-2-L     
+#>  64 left  G_Occipital_Mid-1      lh_G_Occipital_Mid-1-L     
+#>  65 left  G_Occipital_Mid-2      lh_G_Occipital_Mid-2-L     
+#>  66 left  G_Occipital_Mid-3      lh_G_Occipital_Mid-3-L     
+#>  67 left  G_Occipital_Mid-4      lh_G_Occipital_Mid-4-L     
+#>  68 left  G_Occipital_Inf-1      lh_G_Occipital_Inf-1-L     
+#>  69 left  G_Occipital_Inf-2      lh_G_Occipital_Inf-2-L     
+#>  70 left  G_Insula-anterior-1    lh_G_Insula-anterior-1-L   
+#>  71 left  G_Insula-anterior-2    lh_G_Insula-anterior-2-L   
+#>  72 left  G_Insula-anterior-3    lh_G_Insula-anterior-3-L   
+#>  73 left  G_Insula-anterior-4    lh_G_Insula-anterior-4-L   
+#>  74 left  G_Insula-anterior-5    lh_G_Insula-anterior-5-L   
+#>  75 left  G_Insula-posterior-1   lh_G_Insula-posterior-1-L  
+#>  76 left  G_Rolandic_Oper-1      lh_G_Rolandic_Oper-1-L     
+#>  77 left  G_Rolandic_Oper-2      lh_G_Rolandic_Oper-2-L     
+#>  78 left  G_Temporal_Sup-1       lh_G_Temporal_Sup-1-L      
+#>  79 left  G_Temporal_Sup-2       lh_G_Temporal_Sup-2-L      
+#>  80 left  G_Temporal_Sup-3       lh_G_Temporal_Sup-3-L      
+#>  81 left  G_Temporal_Sup-4       lh_G_Temporal_Sup-4-L      
+#>  82 left  S_Sup_Temporal-1       lh_S_Sup_Temporal-1-L      
+#>  83 left  S_Sup_Temporal-2       lh_S_Sup_Temporal-2-L      
+#>  84 left  S_Sup_Temporal-3       lh_S_Sup_Temporal-3-L      
+#>  85 left  S_Sup_Temporal-4       lh_S_Sup_Temporal-4-L      
+#>  86 left  S_Sup_Temporal-5       lh_S_Sup_Temporal-5-L      
+#>  87 left  G_Temporal_Mid-1       lh_G_Temporal_Mid-1-L      
+#>  88 left  G_Temporal_Mid-2       lh_G_Temporal_Mid-2-L      
+#>  89 left  G_Temporal_Mid-3       lh_G_Temporal_Mid-3-L      
+#>  90 left  G_Temporal_Mid-4       lh_G_Temporal_Mid-4-L      
+#>  91 left  G_Temporal_Inf-1       lh_G_Temporal_Inf-1-L      
+#>  92 left  G_Temporal_Inf-2       lh_G_Temporal_Inf-2-L      
+#>  93 left  G_Temporal_Inf-3       lh_G_Temporal_Inf-3-L      
+#>  94 left  G_Temporal_Inf-4       lh_G_Temporal_Inf-4-L      
+#>  95 left  G_Temporal_Inf-5       lh_G_Temporal_Inf-5-L      
+#>  96 left  G_Temporal_Pole_Sup-1  lh_G_Temporal_Pole_Sup-1-L 
+#>  97 left  G_Temporal_Pole_Sup-2  lh_G_Temporal_Pole_Sup-2-L 
+#>  98 left  G_Temporal_Pole_Mid-1  lh_G_Temporal_Pole_Mid-1-L 
+#>  99 left  G_Temporal_Pole_Mid-3  lh_G_Temporal_Pole_Mid-3-L 
+#> 100 left  G_Supp_Motor_Area-2    lh_G_Supp_Motor_Area-2-L   
+#> 101 left  S_Cingulate-4          lh_S_Cingulate-4-L         
+#> 102 left  G_Paracentral_Lobule-2 lh_G_Paracentral_Lobule-2-L
+#> 103 left  G_Precuneus-9          lh_G_Precuneus-9-L         
+#> 104 left  G_Hippocampus-1        lh_G_Hippocampus-1-L       
+#> 105 left  G_Fusiform-3           lh_G_Fusiform-3-L          
+#> 106 left  G_Fusiform-4           lh_G_Fusiform-4-L          
+#> 107 left  G_Fusiform-6           lh_G_Fusiform-6-L          
+#> 108 left  G_Frontal_Sup_Orb-1    lh_G_Frontal_Sup_Orb-1-L   
+#> 109 left  S_Olfactory-1          lh_S_Olfactory-1-L         
+#> 110 left  G_Occipital_Sup-1      lh_G_Occipital_Sup-1-L     
+#> 111 left  G_Frontal_Sup_Medial-1 lh_G_Frontal_Sup_Medial-1-L
+#> 112 left  G_Frontal_Sup_Medial-2 lh_G_Frontal_Sup_Medial-2-L
+#> 113 left  G_Frontal_Sup_Medial-3 lh_G_Frontal_Sup_Medial-3-L
+#> 114 left  S_Anterior_Rostral-1   lh_S_Anterior_Rostral-1-L  
+#> 115 left  G_Frontal_Med_Orb-1    lh_G_Frontal_Med_Orb-1-L   
+#> 116 left  G_Frontal_Med_Orb-2    lh_G_Frontal_Med_Orb-2-L   
+#> 117 left  G_subcallosal-1        lh_G_subcallosal-1-L       
+#> 118 left  G_Supp_Motor_Area-1    lh_G_Supp_Motor_Area-1-L   
+#> 119 left  G_Supp_Motor_Area-3    lh_G_Supp_Motor_Area-3-L   
+#> 120 left  S_Cingulate-1          lh_S_Cingulate-1-L         
+#> 121 left  S_Cingulate-2          lh_S_Cingulate-2-L         
+#> 122 left  S_Cingulate-3          lh_S_Cingulate-3-L         
+#> 123 left  S_Cingulate-5          lh_S_Cingulate-5-L         
+#> 124 left  S_Cingulate-6          lh_S_Cingulate-6-L         
+#> 125 left  S_Cingulate-7          lh_S_Cingulate-7-L         
+#> 126 left  G_Cingulum_Ant-1       lh_G_Cingulum_Ant-1-L      
+#> 127 left  G_Cingulum_Ant-2       lh_G_Cingulum_Ant-2-L      
+#> 128 left  G_Cingulum_Mid-1       lh_G_Cingulum_Mid-1-L      
+#> 129 left  G_Cingulum_Mid-2       lh_G_Cingulum_Mid-2-L      
+#> 130 left  G_Cingulum_Mid-3       lh_G_Cingulum_Mid-3-L      
+#> 131 left  G_Cingulum_Post-1      lh_G_Cingulum_Post-1-L     
+#> 132 left  G_Cingulum_Post-2      lh_G_Cingulum_Post-2-L     
+#> 133 left  G_Cingulum_Post-3      lh_G_Cingulum_Post-3-L     
+#> 134 left  G_Paracentral_Lobule-1 lh_G_Paracentral_Lobule-1-L
+#> 135 left  G_Paracentral_Lobule-3 lh_G_Paracentral_Lobule-3-L
+#> 136 left  G_Paracentral_Lobule-4 lh_G_Paracentral_Lobule-4-L
+#> 137 left  G_Precuneus-1          lh_G_Precuneus-1-L         
+#> 138 left  G_Precuneus-2          lh_G_Precuneus-2-L         
+#> 139 left  G_Precuneus-3          lh_G_Precuneus-3-L         
+#> 140 left  G_Precuneus-4          lh_G_Precuneus-4-L         
+#> 141 left  G_Precuneus-5          lh_G_Precuneus-5-L         
+#> 142 left  G_Precuneus-6          lh_G_Precuneus-6-L         
+#> 143 left  G_Precuneus-7          lh_G_Precuneus-7-L         
+#> 144 left  G_Precuneus-8          lh_G_Precuneus-8-L         
+#> 145 left  S_Parietooccipital-1   lh_S_Parietooccipital-1-L  
+#> 146 left  S_Parietooccipital-2   lh_S_Parietooccipital-2-L  
+#> 147 left  S_Parietooccipital-3   lh_S_Parietooccipital-3-L  
+#> 148 left  S_Parietooccipital-4   lh_S_Parietooccipital-4-L  
+#> 149 left  S_Parietooccipital-5   lh_S_Parietooccipital-5-L  
+#> 150 left  S_Parietooccipital-6   lh_S_Parietooccipital-6-L  
+#> 151 left  G_Cuneus-1             lh_G_Cuneus-1-L            
+#> 152 left  G_Cuneus-2             lh_G_Cuneus-2-L            
+#> 153 left  G_Calcarine-1          lh_G_Calcarine-1-L         
+#> 154 left  G_Calcarine-2          lh_G_Calcarine-2-L         
+#> 155 left  G_Calcarine-3          lh_G_Calcarine-3-L         
+#> 156 left  G_Lingual-1            lh_G_Lingual-1-L           
+#> 157 left  G_Lingual-2            lh_G_Lingual-2-L           
+#> 158 left  G_Lingual-3            lh_G_Lingual-3-L           
+#> 159 left  G_Lingual-4            lh_G_Lingual-4-L           
+#> 160 left  G_Lingual-5            lh_G_Lingual-5-L           
+#> 161 left  G_Lingual-6            lh_G_Lingual-6-L           
+#> 162 left  G_Hippocampus-2        lh_G_Hippocampus-2-L       
+#> 163 left  G_ParaHippocampal-1    lh_G_ParaHippocampal-1-L   
+#> 164 left  G_ParaHippocampal-2    lh_G_ParaHippocampal-2-L   
+#> 165 left  G_ParaHippocampal-3    lh_G_ParaHippocampal-3-L   
+#> 166 left  G_ParaHippocampal-4    lh_G_ParaHippocampal-4-L   
+#> 167 left  G_ParaHippocampal-5    lh_G_ParaHippocampal-5-L   
+#> 168 left  G_Fusiform-1           lh_G_Fusiform-1-L          
+#> 169 left  G_Fusiform-2           lh_G_Fusiform-2-L          
+#> 170 left  G_Fusiform-5           lh_G_Fusiform-5-L          
+#> 171 left  G_Fusiform-7           lh_G_Fusiform-7-L          
+#> 172 right G_Frontal_Sup-2        rh_G_Frontal_Sup-2-R       
+#> 173 right G_Frontal_Sup_Orb-1    rh_G_Frontal_Sup_Orb-1-R   
+#> 174 right G_Frontal_Inf_Orb-2    rh_G_Frontal_Inf_Orb-2-R   
+#> 175 right S_Olfactory-1          rh_S_Olfactory-1-R         
+#> 176 right S_Rolando-4            rh_S_Rolando-4-R           
+#> 177 right G_Parietal_Sup-5       rh_G_Parietal_Sup-5-R      
+#> 178 right G_Occipital_Lat-1      rh_G_Occipital_Lat-1-R     
+#> 179 right G_Occipital_Lat-2      rh_G_Occipital_Lat-2-R     
+#> 180 right G_Occipital_Lat-5      rh_G_Occipital_Lat-5-R     
+#> 181 right G_Occipital_Sup-1      rh_G_Occipital_Sup-1-R     
+#> 182 right G_Occipital_Sup-2      rh_G_Occipital_Sup-2-R     
+#> 183 right G_Insula-anterior-1    rh_G_Insula-anterior-1-R   
+#> 184 right G_Temporal_Inf-1       rh_G_Temporal_Inf-1-R      
+#> 185 right G_Temporal_Pole_Mid-2  rh_G_Temporal_Pole_Mid-2-R 
+#> 186 right G_Temporal_Pole_Mid-3  rh_G_Temporal_Pole_Mid-3-R 
+#> 187 right G_Frontal_Sup_Medial-1 rh_G_Frontal_Sup_Medial-1-R
+#> 188 right G_Frontal_Sup_Medial-2 rh_G_Frontal_Sup_Medial-2-R
+#> 189 right G_Frontal_Sup_Medial-3 rh_G_Frontal_Sup_Medial-3-R
+#> 190 right S_Anterior_Rostral-1   rh_S_Anterior_Rostral-1-R  
+#> 191 right G_Frontal_Med_Orb-1    rh_G_Frontal_Med_Orb-1-R   
+#> 192 right G_Frontal_Med_Orb-2    rh_G_Frontal_Med_Orb-2-R   
+#> 193 right G_subcallosal-1        rh_G_subcallosal-1-R       
+#> 194 right G_Supp_Motor_Area-1    rh_G_Supp_Motor_Area-1-R   
+#> 195 right G_Supp_Motor_Area-2    rh_G_Supp_Motor_Area-2-R   
+#> 196 right G_Supp_Motor_Area-3    rh_G_Supp_Motor_Area-3-R   
+#> 197 right S_Cingulate-1          rh_S_Cingulate-1-R         
+#> 198 right S_Cingulate-2          rh_S_Cingulate-2-R         
+#> 199 right S_Cingulate-3          rh_S_Cingulate-3-R         
+#> 200 right S_Cingulate-4          rh_S_Cingulate-4-R         
+#> 201 right S_Cingulate-5          rh_S_Cingulate-5-R         
+#> 202 right S_Cingulate-6          rh_S_Cingulate-6-R         
+#> 203 right S_Cingulate-7          rh_S_Cingulate-7-R         
+#> 204 right G_Cingulum_Ant-1       rh_G_Cingulum_Ant-1-R      
+#> 205 right G_Cingulum_Ant-2       rh_G_Cingulum_Ant-2-R      
+#> 206 right G_Cingulum_Mid-1       rh_G_Cingulum_Mid-1-R      
+#> 207 right G_Cingulum_Mid-2       rh_G_Cingulum_Mid-2-R      
+#> 208 right G_Cingulum_Mid-3       rh_G_Cingulum_Mid-3-R      
+#> 209 right G_Cingulum_Post-1      rh_G_Cingulum_Post-1-R     
+#> 210 right G_Cingulum_Post-2      rh_G_Cingulum_Post-2-R     
+#> 211 right G_Cingulum_Post-3      rh_G_Cingulum_Post-3-R     
+#> 212 right G_Paracentral_Lobule-1 rh_G_Paracentral_Lobule-1-R
+#> 213 right G_Paracentral_Lobule-2 rh_G_Paracentral_Lobule-2-R
+#> 214 right G_Paracentral_Lobule-3 rh_G_Paracentral_Lobule-3-R
+#> 215 right G_Paracentral_Lobule-4 rh_G_Paracentral_Lobule-4-R
+#> 216 right G_Precuneus-1          rh_G_Precuneus-1-R         
+#> 217 right G_Precuneus-2          rh_G_Precuneus-2-R         
+#> 218 right G_Precuneus-3          rh_G_Precuneus-3-R         
+#> 219 right G_Precuneus-4          rh_G_Precuneus-4-R         
+#> 220 right G_Precuneus-5          rh_G_Precuneus-5-R         
+#> 221 right G_Precuneus-6          rh_G_Precuneus-6-R         
+#> 222 right G_Precuneus-7          rh_G_Precuneus-7-R         
+#> 223 right G_Precuneus-8          rh_G_Precuneus-8-R         
+#> 224 right G_Precuneus-9          rh_G_Precuneus-9-R         
+#> 225 right S_Parietooccipital-1   rh_S_Parietooccipital-1-R  
+#> 226 right S_Parietooccipital-2   rh_S_Parietooccipital-2-R  
+#> 227 right S_Parietooccipital-3   rh_S_Parietooccipital-3-R  
+#> 228 right S_Parietooccipital-4   rh_S_Parietooccipital-4-R  
+#> 229 right S_Parietooccipital-5   rh_S_Parietooccipital-5-R  
+#> 230 right S_Parietooccipital-6   rh_S_Parietooccipital-6-R  
+#> 231 right G_Cuneus-1             rh_G_Cuneus-1-R            
+#> 232 right G_Cuneus-2             rh_G_Cuneus-2-R            
+#> 233 right G_Calcarine-1          rh_G_Calcarine-1-R         
+#> 234 right G_Calcarine-2          rh_G_Calcarine-2-R         
+#> 235 right G_Calcarine-3          rh_G_Calcarine-3-R         
+#> 236 right G_Lingual-1            rh_G_Lingual-1-R           
+#> 237 right G_Lingual-2            rh_G_Lingual-2-R           
+#> 238 right G_Lingual-3            rh_G_Lingual-3-R           
+#> 239 right G_Lingual-4            rh_G_Lingual-4-R           
+#> 240 right G_Lingual-5            rh_G_Lingual-5-R           
+#> 241 right G_Lingual-6            rh_G_Lingual-6-R           
+#> 242 right G_Hippocampus-1        rh_G_Hippocampus-1-R       
+#> 243 right G_Hippocampus-2        rh_G_Hippocampus-2-R       
+#> 244 right G_ParaHippocampal-1    rh_G_ParaHippocampal-1-R   
+#> 245 right G_ParaHippocampal-2    rh_G_ParaHippocampal-2-R   
+#> 246 right G_ParaHippocampal-3    rh_G_ParaHippocampal-3-R   
+#> 247 right G_ParaHippocampal-4    rh_G_ParaHippocampal-4-R   
+#> 248 right G_ParaHippocampal-5    rh_G_ParaHippocampal-5-R   
+#> 249 right G_Fusiform-1           rh_G_Fusiform-1-R          
+#> 250 right G_Fusiform-2           rh_G_Fusiform-2-R          
+#> 251 right G_Fusiform-3           rh_G_Fusiform-3-R          
+#> 252 right G_Fusiform-4           rh_G_Fusiform-4-R          
+#> 253 right G_Fusiform-5           rh_G_Fusiform-5-R          
+#> 254 right G_Fusiform-6           rh_G_Fusiform-6-R          
+#> 255 right G_Fusiform-7           rh_G_Fusiform-7-R          
+#> 256 right G_Frontal_Sup-3        rh_G_Frontal_Sup-3-R       
+#> 257 right S_Sup_Frontal-1        rh_S_Sup_Frontal-1-R       
+#> 258 right S_Sup_Frontal-2        rh_S_Sup_Frontal-2-R       
+#> 259 right S_Sup_Frontal-3        rh_S_Sup_Frontal-3-R       
+#> 260 right S_Sup_Frontal-4        rh_S_Sup_Frontal-4-R       
+#> 261 right S_Sup_Frontal-5        rh_S_Sup_Frontal-5-R       
+#> 262 right S_Sup_Frontal-6        rh_S_Sup_Frontal-6-R       
+#> 263 right G_Frontal_Mid-1        rh_G_Frontal_Mid-1-R       
+#> 264 right G_Frontal_Mid-2        rh_G_Frontal_Mid-2-R       
+#> 265 right G_Frontal_Mid-3        rh_G_Frontal_Mid-3-R       
+#> 266 right G_Frontal_Mid-4        rh_G_Frontal_Mid-4-R       
+#> 267 right G_Frontal_Mid-5        rh_G_Frontal_Mid-5-R       
+#> 268 right S_Inf_Frontal-1        rh_S_Inf_Frontal-1-R       
+#> 269 right S_Inf_Frontal-2        rh_S_Inf_Frontal-2-R       
+#> 270 right G_Frontal_Inf_Tri-1    rh_G_Frontal_Inf_Tri-1-R   
+#> 271 right G_Frontal_Mid_Orb-1    rh_G_Frontal_Mid_Orb-1-R   
+#> 272 right G_Frontal_Mid_Orb-2    rh_G_Frontal_Mid_Orb-2-R   
+#> 273 right G_Frontal_Inf_Orb-1    rh_G_Frontal_Inf_Orb-1-R   
+#> 274 right S_Orbital-1            rh_S_Orbital-1-R           
+#> 275 right S_Orbital-2            rh_S_Orbital-2-R           
+#> 276 right S_Precentral-1         rh_S_Precentral-1-R        
+#> 277 right S_Precentral-2         rh_S_Precentral-2-R        
+#> 278 right S_Precentral-3         rh_S_Precentral-3-R        
+#> 279 right S_Precentral-4         rh_S_Precentral-4-R        
+#> 280 right S_Precentral-5         rh_S_Precentral-5-R        
+#> 281 right S_Precentral-6         rh_S_Precentral-6-R        
+#> 282 right S_Rolando-1            rh_S_Rolando-1-R           
+#> 283 right S_Rolando-2            rh_S_Rolando-2-R           
+#> 284 right S_Rolando-3            rh_S_Rolando-3-R           
+#> 285 right S_Postcentral-1        rh_S_Postcentral-1-R       
+#> 286 right S_Postcentral-2        rh_S_Postcentral-2-R       
+#> 287 right S_Postcentral-3        rh_S_Postcentral-3-R       
+#> 288 right G_Parietal_Sup-1       rh_G_Parietal_Sup-1-R      
+#> 289 right G_Parietal_Sup-2       rh_G_Parietal_Sup-2-R      
+#> 290 right G_Parietal_Sup-3       rh_G_Parietal_Sup-3-R      
+#> 291 right G_Parietal_Sup-4       rh_G_Parietal_Sup-4-R      
+#> 292 right G_Supramarginal-1      rh_G_Supramarginal-1-R     
+#> 293 right G_SupraMarginal-2      rh_G_SupraMarginal-2-R     
+#> 294 right G_Supramarginal-3      rh_G_Supramarginal-3-R     
+#> 295 right G_Supramarginal-4      rh_G_Supramarginal-4-R     
+#> 296 right G_SupraMarginal-5      rh_G_SupraMarginal-5-R     
+#> 297 right G_SupraMarginal-6      rh_G_SupraMarginal-6-R     
+#> 298 right G_SupraMarginal-7      rh_G_SupraMarginal-7-R     
+#> 299 right G_Angular-1            rh_G_Angular-1-R           
+#> 300 right G_Angular-2            rh_G_Angular-2-R           
+#> 301 right G_Angular-3            rh_G_Angular-3-R           
+#> 302 right G_Parietal_Inf-1       rh_G_Parietal_Inf-1-R      
+#> 303 right S_Intraparietal-1      rh_S_Intraparietal-1-R     
+#> 304 right S_Intraparietal-2      rh_S_Intraparietal-2-R     
+#> 305 right S_Intraparietal-3      rh_S_Intraparietal-3-R     
+#> 306 right S_Intraoccipital-1     rh_S_Intraoccipital-1-R    
+#> 307 right G_Occipital_Pole-1     rh_G_Occipital_Pole-1-R    
+#> 308 right G_Occipital_Lat-3      rh_G_Occipital_Lat-3-R     
+#> 309 right G_Occipital_Lat-4      rh_G_Occipital_Lat-4-R     
+#> 310 right G_Occipital_Mid-1      rh_G_Occipital_Mid-1-R     
+#> 311 right G_Occipital_Mid-2      rh_G_Occipital_Mid-2-R     
+#> 312 right G_Occipital_Mid-3      rh_G_Occipital_Mid-3-R     
+#> 313 right G_Occipital_Mid-4      rh_G_Occipital_Mid-4-R     
+#> 314 right G_Occipital_Inf-1      rh_G_Occipital_Inf-1-R     
+#> 315 right G_Occipital_Inf-2      rh_G_Occipital_Inf-2-R     
+#> 316 right G_Insula-anterior-2    rh_G_Insula-anterior-2-R   
+#> 317 right G_Insula-anterior-3    rh_G_Insula-anterior-3-R   
+#> 318 right G_Insula-anterior-4    rh_G_Insula-anterior-4-R   
+#> 319 right G_Insula-anterior-5    rh_G_Insula-anterior-5-R   
+#> 320 right G_Insula-posterior-1   rh_G_Insula-posterior-1-R  
+#> 321 right G_Rolandic_Oper-1      rh_G_Rolandic_Oper-1-R     
+#> 322 right G_Rolandic_Oper-2      rh_G_Rolandic_Oper-2-R     
+#> 323 right G_Temporal_Sup-1       rh_G_Temporal_Sup-1-R      
+#> 324 right G_Temporal_Sup-2       rh_G_Temporal_Sup-2-R      
+#> 325 right G_Temporal_Sup-3       rh_G_Temporal_Sup-3-R      
+#> 326 right G_Temporal_Sup-4       rh_G_Temporal_Sup-4-R      
+#> 327 right S_Sup_Temporal-1       rh_S_Sup_Temporal-1-R      
+#> 328 right S_Sup_Temporal-2       rh_S_Sup_Temporal-2-R      
+#> 329 right S_Sup_Temporal-3       rh_S_Sup_Temporal-3-R      
+#> 330 right S_Sup_Temporal-4       rh_S_Sup_Temporal-4-R      
+#> 331 right S_Sup_Temporal-5       rh_S_Sup_Temporal-5-R      
+#> 332 right G_Temporal_Mid-1       rh_G_Temporal_Mid-1-R      
+#> 333 right G_Temporal_Mid-2       rh_G_Temporal_Mid-2-R      
+#> 334 right G_Temporal_Mid-3       rh_G_Temporal_Mid-3-R      
+#> 335 right G_Temporal_Mid-4       rh_G_Temporal_Mid-4-R      
+#> 336 right G_Temporal_Inf-2       rh_G_Temporal_Inf-2-R      
+#> 337 right G_Temporal_Inf-3       rh_G_Temporal_Inf-3-R      
+#> 338 right G_Temporal_Inf-4       rh_G_Temporal_Inf-4-R      
+#> 339 right G_Temporal_Inf-5       rh_G_Temporal_Inf-5-R      
+#> 340 right G_Temporal_Pole_Sup-1  rh_G_Temporal_Pole_Sup-1-R 
+#> 341 right G_Temporal_Pole_Sup-2  rh_G_Temporal_Pole_Sup-2-R 
+#> 342 right G_Temporal_Pole_Mid-1  rh_G_Temporal_Pole_Mid-1-R 
+```
