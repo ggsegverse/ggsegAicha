@@ -22,12 +22,8 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0),
     vdiffr
-Remotes:
-    ggseg/ggseg,
-    ggseg/ggseg3d,
-    ggseg/ggseg.formats
-URL: https://github.com/ggseg/ggsegAicha
-BugReports: https://github.com/ggseg/ggsegAicha/issues
+URL: https://github.com/ggsegverse/ggsegAicha
+BugReports: https://github.com/ggsegverse/ggsegAicha/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Config/testthat/edition: 3
