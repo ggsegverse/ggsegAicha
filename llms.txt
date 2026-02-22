@@ -1,12 +1,13 @@
 # ggsegAicha
 
 This package contains dataset for plotting the
-[aicha](https://pubmed.ncbi.nlm.nih.gov/26213217/) atlas ggseg and
+[AICHA](https://pubmed.ncbi.nlm.nih.gov/26213217/) atlas for ggseg and
 ggseg3d.
 
 Joliot, M., Jobard, G., Naveau, M., Delcroix, N., Petit, L., Zago, L., …
 & Tzourio-Mazoyer, N. (2015). AICHA: An atlas of intrinsic connectivity
-of homotopic areas. Journal of neuroscience methods, 254, 46-59. ()
+of homotopic areas. Journal of neuroscience methods, 254, 46-59.
+([PubMed](https://pubmed.ncbi.nlm.nih.gov/26213217/))
 
 To learn how to use these atlases, please look at the documentation for
 [ggseg](https://ggseg.github.io/ggseg/) and
@@ -18,42 +19,45 @@ We recommend installing the ggseg-atlases through the ggseg
 [r-universe](https://ggseg.r-universe.dev/ui#builds):
 
 ``` r
-# Enable this universe
 options(repos = c(
-    ggseg = 'https://ggseg.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
+  ggseg = "https://ggseg.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
 
-# Install some packages
-install.packages('ggsegAicha')
+install.packages("ggsegAicha")
 ```
 
-You can install the released version of ggsegAicha from
-[GitHub](https://github.com/) with:
+You can install from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("ggseg/ggsegAicha")
 ```
 
-``` r
-library(ggseg)
-#> Warning: package 'ggseg' was built under R version 4.1.1
-#> Loading required package: ggplot2
-library(ggseg3d)
-library(ggsegAicha)
+## Example
 
-plot(aicha) +
-  theme(legend.position = "bottom", 
-        legend.text = element_text(size = 9)) +
-  guides(fill = guide_legend(ncol = 6))
+``` r
+library(ggsegAicha)
+library(ggseg)
+library(ggplot2)
+
+ggplot() +
+  geom_brain(
+    atlas = aicha(),
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = aicha()$palette, na.value = "grey") +
+  theme_void()
 ```
 
-![](reference/figures/README-unnamed-chunk-3-1.png)
+![](reference/figures/README-2d-plot-1.png)
 
 ``` r
-library(dplyr)
-ggseg3d(atlas = aicha_3d) %>% 
-  add_glassbrain() %>% 
+library(ggseg3d)
+
+ggseg3d(atlas = aicha()) |>
   pan_camera("right lateral")
 ```
 
