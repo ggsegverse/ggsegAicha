@@ -2,16 +2,17 @@
 format: gfm
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.qmd. Please edit that file -->
 
 ```{r}
+#| label: setup
 #| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%",
-  fig.width = 10, 
+  fig.width = 10,
   fig.retina = 3
 )
 ```
@@ -24,12 +25,12 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/ggsegAicha)](https://CRAN.R-project.org/package=ggsegAicha)
 <!-- badges: end -->
 
-This package contains dataset for plotting the [aicha](https://pubmed.ncbi.nlm.nih.gov/26213217/) atlas ggseg and ggseg3d. 
+This package contains dataset for plotting the [AICHA](https://pubmed.ncbi.nlm.nih.gov/26213217/) atlas for ggseg and ggseg3d.
 
 Joliot, M., Jobard, G., Naveau, M., Delcroix, N., Petit, L., Zago, L., ... & Tzourio-Mazoyer, N. (2015).
-  AICHA: An atlas of intrinsic connectivity of homotopic areas. 
-  Journal of neuroscience methods, 254, 46-59.
-  (\href{https://pubmed.ncbi.nlm.nih.gov/26213217/}{PubMed})
+AICHA: An atlas of intrinsic connectivity of homotopic areas.
+Journal of neuroscience methods, 254, 46-59.
+([PubMed](https://pubmed.ncbi.nlm.nih.gov/26213217/))
 
 To learn how to use these atlases, please look at the documentation for [ggseg](https://ggseg.github.io/ggseg/) and [ggseg3d](https://ggseg.github.io/ggseg3d)
 
@@ -38,63 +39,67 @@ To learn how to use these atlases, please look at the documentation for [ggseg](
 We recommend installing the ggseg-atlases through the ggseg [r-universe](https://ggseg.r-universe.dev/ui#builds):
 
 ```{r}
+#| label: install-r-universe
 #| eval: false
-# Enable this universe
 options(repos = c(
-    ggseg = 'https://ggseg.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
+  ggseg = "https://ggseg.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
 
-# Install some packages
-install.packages('ggsegAicha')
+install.packages("ggsegAicha")
 ```
 
-You can install the released version of ggsegAicha from [GitHub](https://github.com/) with:
+You can install from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("ggseg/ggsegAicha")
 ```
 
+## Example
+
 ```{r}
+#| label: 2d-plot
 #| fig-height: 12
-library(ggseg)
-library(ggseg3d)
 library(ggsegAicha)
+library(ggseg)
+library(ggplot2)
 
-plot(aicha()) +
-  theme(legend.position = "bottom", 
-        legend.text = element_text(size = 9)) +
-  guides(fill = guide_legend(ncol = 6))
-
+ggplot() +
+  geom_brain(
+    atlas = aicha(),
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = aicha()$palette, na.value = "grey") +
+  theme_void()
 ```
 
 ```{r}
-#| label: noneval
+#| label: 3d-example
 #| eval: false
-library(dplyr)
-ggseg3d(atlas = aicha()) |> 
-  add_glassbrain() |> 
+library(ggseg3d)
+
+ggseg3d(atlas = aicha()) |>
   pan_camera("right lateral")
 ```
 
 ```{r}
-#| label: orca
+#| label: 3d-snapshot
 #| include: false
-library(dplyr)
-p <- ggseg3d(atlas = aicha()) |>
-  add_glassbrain(hemisphere = "left")|>
+#| eval: !expr (file.exists(Sys.which("chrome")) || file.exists(Sys.which("chromium"))) && !nzchar(Sys.getenv("CI"))
+library(ggseg3d)
+
+ggseg3d(atlas = aicha()) |>
   pan_camera("right lateral") |>
-  plotly::add_annotations( text="Screen capture",
-                  legendtitle=TRUE, showarrow=FALSE,
-                  font = list(color = "#000000b4",
-                              family = 'sans serif',
-                              size = 50))
-snapshot_brain("man/figures/README-3d-plot.png")
+  snapshot_brain("man/figures/README-3d-plot.png")
 ```
 
 ```{r}
-#| label: incl
+#| label: 3d-include
 #| echo: false
+#| eval: !expr file.exists("man/figures/README-3d-plot.png")
 knitr::include_graphics("man/figures/README-3d-plot.png")
 ```
 
