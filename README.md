@@ -78,3 +78,10 @@ ggseg3d(atlas = aicha()) |>
 Please note that the ‘ggsegAicha’ project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
 this project, you agree to abide by its terms.
+
+## Data source
+
+Annotation files on fsaverage5.
+
+- **Reference**: Joliot et al. (2015) [doi:10.1016/j.jneumeth.2015.07.013](https://doi.org/10.1016/j.jneumeth.2015.07.013)
+- **Date obtained**: 2021-10-15
