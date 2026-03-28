@@ -1,10 +1,21 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # ggsegAicha
 
 <!-- badges: start -->
-
 [![R-CMD-check](https://github.com/ggsegverse/ggsegAicha/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegAicha/actions/workflows/R-CMD-check.yaml)
 [![r-universe](https://ggsegverse.r-universe.dev/badges/ggsegAicha)](https://ggsegverse.r-universe.dev/ggsegAicha)
 <!-- badges: end -->
@@ -13,7 +24,7 @@ AICHA Atlas for the ggsegverse Ecosystem.
 
 ## Installation
 
-``` r
+```{r, eval = FALSE}
 # From r-universe
 install.packages("ggsegAicha", repos = "https://ggsegverse.r-universe.dev")
 
@@ -23,22 +34,18 @@ remotes::install_github("ggsegverse/ggsegAicha")
 ```
 
 ## Atlases
-
 ### aicha
-
+ 
 Atlas of Intrinsic Connectivity of Homotopic Areas.
 
-``` r
+```{r aicha}
 library(ggsegAicha)
 plot(aicha())
 ```
-
-<img src="man/figures/README-aicha-1.png" alt="" width="100%" /> \##
-Data source
+## Data source
 
 Annotation files on fsaverage5.
 
-- **Reference**: Joliot et al. (2015)
-  [doi:10.1016/j.jneumeth.2015.07.013](https://doi.org/10.1016/j.jneumeth.2015.07.013)
+- **Reference**: Joliot et al. (2015) [doi:10.1016/j.jneumeth.2015.07.013](https://doi.org/10.1016/j.jneumeth.2015.07.013)
 
 - **Date obtained**: 2021-10-15
