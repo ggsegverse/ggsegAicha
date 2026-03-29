@@ -19,4 +19,5 @@
 #' @export
 #' @examples
 #' aicha()
+#' plot(aicha())
 aicha <- function() .aicha
