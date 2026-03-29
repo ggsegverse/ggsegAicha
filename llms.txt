@@ -1,72 +1,37 @@
 # ggsegAicha
 
-This package contains dataset for plotting the
-[AICHA](https://pubmed.ncbi.nlm.nih.gov/26213217/) atlas for ggseg and
-ggseg3d.
-
-Joliot, M., Jobard, G., Naveau, M., Delcroix, N., Petit, L., Zago, L., …
-& Tzourio-Mazoyer, N. (2015). AICHA: An atlas of intrinsic connectivity
-of homotopic areas. Journal of neuroscience methods, 254, 46-59.
-([PubMed](https://pubmed.ncbi.nlm.nih.gov/26213217/))
-
-To learn how to use these atlases, please look at the documentation for
-[ggseg](https://ggseg.github.io/ggseg/) and
-[ggseg3d](https://ggseg.github.io/ggseg3d)
+AICHA Atlas for the ggsegverse Ecosystem.
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggseg
-[r-universe](https://ggseg.r-universe.dev/ui#builds):
-
 ``` r
-options(repos = c(
-  ggseg = "https://ggseg.r-universe.dev",
-  CRAN = "https://cloud.r-project.org"
-))
+# From r-universe
+install.packages("ggsegAicha", repos = "https://ggsegverse.r-universe.dev")
 
-install.packages("ggsegAicha")
-```
-
-You can install from [GitHub](https://github.com/) with:
-
-``` r
+# From GitHub
 # install.packages("remotes")
-remotes::install_github("ggseg/ggsegAicha")
+remotes::install_github("ggsegverse/ggsegAicha")
 ```
 
-## Example
+## Atlases
+
+### aicha
+
+Atlas of Intrinsic Connectivity of Homotopic Areas.
 
 ``` r
 library(ggsegAicha)
-library(ggseg)
-library(ggplot2)
-
-ggplot() +
-  geom_brain(
-    atlas = aicha(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = aicha()$palette, na.value = "grey") +
-  theme_void()
+plot(aicha())
 ```
 
-![](reference/figures/README-2d-plot-1.png)
+![](reference/figures/README-aicha-1.png) \## Data source
 
-``` r
-library(ggseg3d)
+Annotation files on fsaverage5.
 
-ggseg3d(atlas = aicha()) |>
-  pan_camera("right lateral")
-```
+- **Reference**: Joliot et al. (2015)
+  [doi:10.1016/j.jneumeth.2015.07.013](https://doi.org/10.1016/j.jneumeth.2015.07.013)
 
-![](reference/figures/README-3d-plot.png)
-
-Please note that the ‘ggsegAicha’ project is released with a
-[Contributor Code of
-Conduct](https://ggseg.github.io/ggsegAicha/CODE_OF_CONDUCT.md). By
-contributing to this project, you agree to abide by its terms.
+- **Date obtained**: 2021-10-15
 
 # Package index
 

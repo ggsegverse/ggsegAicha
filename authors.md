@@ -11,12 +11,12 @@ Source:
 [`DESCRIPTION`](https://github.com/ggsegverse/ggsegAicha/blob/main/DESCRIPTION)
 
 Mowinckel A (2026). *ggsegAicha: AICHA Atlas for the 'ggseg' Ecosystem*.
-R package version 2.0.0, <https://github.com/ggsegverse/ggsegAicha>.
+R package version 2.0.1, <https://github.com/ggsegverse/ggsegAicha>.
 
     @Manual{,
       title = {ggsegAicha: AICHA Atlas for the 'ggseg' Ecosystem},
       author = {Athanasia Mo Mowinckel},
       year = {2026},
-      note = {R package version 2.0.0},
+      note = {R package version 2.0.1},
       url = {https://github.com/ggsegverse/ggsegAicha},
     }
