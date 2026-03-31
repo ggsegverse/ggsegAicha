@@ -7,6 +7,7 @@
 #' [ggseg3d::ggseg3d()].
 #'
 #' @family ggseg_atlases
+#' @family cortical_atlases
 #'
 #' @references Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L,
 #'   ... & Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic
