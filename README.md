@@ -1,44 +1,64 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggsegAicha
+<!-- README.md is generated from README.qmd. Please edit that file -->
+
+# ggsegAicha <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ggsegverse/ggsegAicha/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegAicha/actions/workflows/R-CMD-check.yaml)
-[![r-universe](https://ggsegverse.r-universe.dev/badges/ggsegAicha)](https://ggsegverse.r-universe.dev/ggsegAicha)
+[![r-universe](https://ggseg.r-universe.dev/badges/ggsegAicha.png)](https://ggseg.r-universe.dev/ggsegAicha)
 <!-- badges: end -->
 
-AICHA Atlas for the ggsegverse Ecosystem.
+This package contains dataset for plotting the AICHA atlas for ggseg.
+
+Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L, … &
+Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic connectivity of
+homotopic areas. *Journal of Neuroscience Methods*, 254, 46-59.
 
 ## Installation
 
-``` r
-# From r-universe
-install.packages("ggsegAicha", repos = "https://ggsegverse.r-universe.dev")
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
 
-# From GitHub
-# install.packages("remotes")
-remotes::install_github("ggsegverse/ggsegAicha")
+``` r
+options(repos = c(
+  ggseg = "https://ggseg.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+
+install.packages("ggsegAicha")
 ```
 
-## Atlases
-
-### aicha
-
-Atlas of Intrinsic Connectivity of Homotopic Areas.
+You can install this package from [GitHub](https://github.com/) with:
 
 ``` r
+# install.packages("pak")
+pak::pak("ggsegverse/ggsegAicha")
+```
+
+## AICHA atlas
+
+``` r
+library(ggseg)
 library(ggsegAicha)
-plot(aicha())
+library(ggplot2)
+
+ggplot() +
+  geom_brain(
+    atlas = aicha(),
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = aicha()$palette, na.value = "grey") +
+  theme_void()
 ```
 
-<img src="man/figures/README-aicha-1.png" alt="" width="100%" /> \##
-Data source
+<img src="man/figures/README-aicha-1.png" style="width:100.0%" />
 
-Annotation files on fsaverage5.
+## Data source
 
-- **Reference**: Joliot et al. (2015)
-  [doi:10.1016/j.jneumeth.2015.07.013](https://doi.org/10.1016/j.jneumeth.2015.07.013)
-
-- **Date obtained**: 2021-10-15
+Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L, … &
+Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic connectivity of
+homotopic areas. *Journal of Neuroscience Methods*, 254, 46-59.
