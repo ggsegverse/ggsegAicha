@@ -20,5 +20,5 @@
 #' @export
 #' @examples
 #' aicha()
-#' plot(aicha())
+#' \dontrun{plot(aicha())}
 aicha <- function() .aicha

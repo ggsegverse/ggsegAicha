@@ -34,7 +34,9 @@ aicha_n <- aicha_3d
 aicha_n <- unnest(aicha_n, ggseg_3d)
 aicha_n <- mutate(aicha_n,
                   region = gsub("-L$|-R$", "", region),
-                  region = ifelse(grepl("Unknown|\\?", region, ignore.case = TRUE), NA, region),
+                   region = ifelse(
+                     grepl("Unknown|\\?", region, ignore.case = TRUE),
+                     NA, region),
                   atlas = "aicha_3d"
 )
 aicha_3d <- as_ggseg3d_atlas(aicha_n)
@@ -54,7 +56,7 @@ aicha <- make_ggseg3d_2_ggseg(aicha_3d,
                               output_dir = here::here("data-raw/"))
 plot(aicha, show.legend = FALSE)
 
-aicha %>%
+aicha |>
   ggseg(atlas = ., show.legend = FALSE,
         colour = "black",
         mapping = aes(fill=region)) +
