@@ -59,6 +59,7 @@ pak::pak("ggsegverse/ggsegAicha")
 #| label: aicha
 #| fig-height: 7
 library(ggseg)
+library(ggsegAicha)
 
 plot(aicha())
 ```
