@@ -6,24 +6,15 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ggseg/ggsegAicha/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegAicha/actions)
-[![DOI](https://zenodo.org/badge/417476540.svg)](https://zenodo.org/badge/latestdoi/417476540)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/ggsegAicha.png)](https://CRAN.R-project.org/package=ggsegAicha)
+[![R-CMD-check](https://github.com/ggsegverse/ggsegAicha/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegAicha/actions/workflows/R-CMD-check.yaml)
+[![r-universe](https://ggseg.r-universe.dev/badges/ggsegAicha.png)](https://ggseg.r-universe.dev/ggsegAicha)
 <!-- badges: end -->
 
-This package contains dataset for plotting the
-[AICHA](https://pubmed.ncbi.nlm.nih.gov/26213217/) atlas for ggseg and
-ggseg3d.
+This package contains dataset for plotting the AICHA atlas for ggseg.
 
-Joliot, M., Jobard, G., Naveau, M., Delcroix, N., Petit, L., Zago, L., …
-& Tzourio-Mazoyer, N. (2015). AICHA: An atlas of intrinsic connectivity
-of homotopic areas. Journal of neuroscience methods, 254, 46-59.
-([PubMed](https://pubmed.ncbi.nlm.nih.gov/26213217/))
-
-To learn how to use these atlases, please look at the documentation for
-[ggseg](https://ggseg.github.io/ggseg/) and
-[ggseg3d](https://ggseg.github.io/ggseg3d)
+Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L, … &
+Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic connectivity of
+homotopic areas. *Journal of Neuroscience Methods*, 254, 46-59.
 
 ## Installation
 
@@ -39,33 +30,35 @@ options(repos = c(
 install.packages("ggsegAicha")
 ```
 
-You can install from [GitHub](https://github.com/) with:
+You can install this package from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("ggseg/ggsegAicha")
+# install.packages("pak")
+pak::pak("ggsegverse/ggsegAicha")
 ```
 
-## Example
+## AICHA atlas
 
 ``` r
-library(ggsegAicha)
 library(ggseg)
+library(ggsegAicha)
+library(ggplot2)
 
-plot(aicha())
+ggplot() +
+  geom_brain(
+    atlas = aicha(),
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = aicha()$palette, na.value = "grey") +
+  theme_void()
 ```
 
-<img src="man/figures/README-2d-plot-1.png" style="width:100.0%" />
+<img src="man/figures/README-aicha-1.png" style="width:100.0%" />
 
-``` r
-library(ggseg3d)
+## Data source
 
-ggseg3d(atlas = aicha()) |>
-  pan_camera("right lateral")
-```
-
-<img src="man/figures/README-3d-plot.png" style="width:100.0%" />
-
-Please note that the ‘ggsegAicha’ project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project, you agree to abide by its terms.
+Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L, … &
+Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic connectivity of
+homotopic areas. *Journal of Neuroscience Methods*, 254, 46-59.
