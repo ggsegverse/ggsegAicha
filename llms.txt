@@ -32,17 +32,8 @@ pak::pak("ggsegverse/ggsegAicha")
 ``` r
 library(ggseg)
 library(ggsegAicha)
-library(ggplot2)
 
-ggplot() +
-  geom_brain(
-    atlas = aicha(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = aicha()$palette, na.value = "grey") +
-  theme_void()
+plot(aicha())
 ```
 
 ![](reference/figures/README-aicha-1.png)
