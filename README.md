@@ -1,44 +1,71 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggsegAicha
+<!-- README.md is generated from README.qmd. Please edit that file -->
+
+# ggsegAicha <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ggsegverse/ggsegAicha/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegAicha/actions/workflows/R-CMD-check.yaml)
-[![r-universe](https://ggsegverse.r-universe.dev/badges/ggsegAicha)](https://ggsegverse.r-universe.dev/ggsegAicha)
+[![R-CMD-check](https://github.com/ggseg/ggsegAicha/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegAicha/actions)
+[![DOI](https://zenodo.org/badge/417476540.svg)](https://zenodo.org/badge/latestdoi/417476540)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ggsegAicha.png)](https://CRAN.R-project.org/package=ggsegAicha)
 <!-- badges: end -->
 
-AICHA Atlas for the ggsegverse Ecosystem.
+This package contains dataset for plotting the
+[AICHA](https://pubmed.ncbi.nlm.nih.gov/26213217/) atlas for ggseg and
+ggseg3d.
+
+Joliot, M., Jobard, G., Naveau, M., Delcroix, N., Petit, L., Zago, L., …
+& Tzourio-Mazoyer, N. (2015). AICHA: An atlas of intrinsic connectivity
+of homotopic areas. Journal of neuroscience methods, 254, 46-59.
+([PubMed](https://pubmed.ncbi.nlm.nih.gov/26213217/))
+
+To learn how to use these atlases, please look at the documentation for
+[ggseg](https://ggseg.github.io/ggseg/) and
+[ggseg3d](https://ggseg.github.io/ggseg3d)
 
 ## Installation
 
-``` r
-# From r-universe
-install.packages("ggsegAicha", repos = "https://ggsegverse.r-universe.dev")
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
 
-# From GitHub
-# install.packages("remotes")
-remotes::install_github("ggsegverse/ggsegAicha")
+``` r
+options(repos = c(
+  ggseg = "https://ggseg.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+
+install.packages("ggsegAicha")
 ```
 
-## Atlases
+You can install from [GitHub](https://github.com/) with:
 
-### aicha
+``` r
+# install.packages("remotes")
+remotes::install_github("ggseg/ggsegAicha")
+```
 
-Atlas of Intrinsic Connectivity of Homotopic Areas.
+## Example
 
 ``` r
 library(ggsegAicha)
+library(ggseg)
+
 plot(aicha())
 ```
 
-<img src="man/figures/README-aicha-1.png" alt="" width="100%" /> \##
-Data source
+<img src="man/figures/README-2d-plot-1.png" style="width:100.0%" />
 
-Annotation files on fsaverage5.
+``` r
+library(ggseg3d)
 
-- **Reference**: Joliot et al. (2015)
-  [doi:10.1016/j.jneumeth.2015.07.013](https://doi.org/10.1016/j.jneumeth.2015.07.013)
+ggseg3d(atlas = aicha()) |>
+  pan_camera("right lateral")
+```
 
-- **Date obtained**: 2021-10-15
+<img src="man/figures/README-3d-plot.png" style="width:100.0%" />
+
+Please note that the ‘ggsegAicha’ project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.
