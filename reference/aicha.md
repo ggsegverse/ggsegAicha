@@ -387,4 +387,5 @@ aicha()
 #> 341 right G_Fusiform-5-R           rh_G_Fusiform-5-R          
 #> 342 right G_Fusiform-6-R           rh_G_Fusiform-6-R          
 #> 343 right G_Fusiform-7-R           rh_G_Fusiform-7-R          
+if (FALSE) plot(aicha()) # \dontrun{}
 ```
