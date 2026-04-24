@@ -18,6 +18,7 @@ geometry for \code{\link[ggseg:ggbrain]{ggseg::geom_brain()}} and 3D vertex indi
 }
 \examples{
 aicha()
+\dontrun{plot(aicha())}
 }
 \references{
 Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L,
@@ -26,4 +27,5 @@ connectivity of homotopic areas. \emph{Journal of Neuroscience Methods},
 254, 46-59.
 \doi{10.1016/j.jneumeth.2015.07.013}
 }
+\concept{cortical_atlases}
 \concept{ggseg_atlases}
