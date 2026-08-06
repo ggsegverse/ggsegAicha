@@ -10,18 +10,11 @@ describe("aicha atlas", {
 
   it("renders with ggseg", {
     skip_if_not_installed("ggseg")
-    skip_if_not_installed("ggplot2")
     skip_if_not_installed("vdiffr")
-    p <- ggplot2::ggplot() +
-      ggseg::geom_brain(
-        atlas = aicha(),
-        mapping = ggplot2::aes(fill = label),
-        position = ggseg::position_brain(hemi ~ view),
-        show.legend = FALSE
-      ) +
-      ggplot2::scale_fill_manual(values = aicha()$palette, na.value = "grey") +
-      ggplot2::theme_void()
-    vdiffr::expect_doppelganger("aicha-2d", p)
+    vdiffr::expect_doppelganger(
+      "aicha-2d",
+      ggseg::brain_test_plot(aicha())
+    )
   })
 
   it("renders with ggseg3d", {
