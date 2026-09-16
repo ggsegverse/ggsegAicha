@@ -6,9 +6,9 @@
 \alias{ggsegAicha-package}
 \title{ggsegAicha: AICHA Atlas for the 'ggseg' Ecosystem}
 \description{
-\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+\if{html}{\figure{logo.svg}{options: style='float: right' alt='logo' width='120'}}
 
-AICHA (Atlas of Intrinsic Connectivity of Homotopic Areas) atlas for the 'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object with both 2D polygon geometry and 3D vertex indices, for use with 'ggseg' and 'ggseg3d'.
+AICHA (Atlas of Intrinsic Connectivity of Homotopic Areas) atlas for the 'ggseg' ecosystem. Provides cortical and subcortical 'ggseg_atlas' objects with 2D polygon geometry and 3D vertex or mesh data, for use with 'ggseg' and 'ggseg3d'.
 }
 \seealso{
 Useful links:
@@ -20,6 +20,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Athanasia Mo Mowinckel \email{a.m.mowinckel@psykologi.uio.no} (\href{https://orcid.org/0000-0002-5756-0223}{ORCID})
+
+Authors:
+\itemize{
+  \item Athanasia Mo Mowinckel \email{a.m.mowinckel@psykologi.uio.no} (\href{https://orcid.org/0000-0002-5756-0223}{ORCID})
+}
 
 }
 \keyword{internal}

@@ -13,7 +13,7 @@ A \link[ggseg.formats:ggseg_atlas]{ggseg.formats::ggseg_atlas} object (cortical)
 Brain atlas for the AICHA cortical parcellation with 342 regions.
 The original volumetric atlas in MNI space was projected to fsaverage
 using the CBIG lab's registration fusion. Contains both 2D polygon
-geometry for \code{\link[ggseg:ggbrain]{ggseg::geom_brain()}} and 3D vertex indices for
+geometry for \code{\link[ggseg:geom_brain]{ggseg::geom_brain()}} and 3D vertex indices for
 \code{\link[ggseg3d:ggseg3d]{ggseg3d::ggseg3d()}}.
 }
 \examples{
@@ -26,6 +26,10 @@ Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L,
 connectivity of homotopic areas. \emph{Journal of Neuroscience Methods},
 254, 46-59.
 \doi{10.1016/j.jneumeth.2015.07.013}
+}
+\seealso{
+Other ggseg_atlases:
+\code{\link[=aicha_sub]{aicha_sub()}}
 }
 \concept{cortical_atlases}
 \concept{ggseg_atlases}
