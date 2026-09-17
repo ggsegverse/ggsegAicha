@@ -3,3 +3,10 @@
 .RData
 .Ruserdata
 docs/
+
+# Pipeline intermediates
+data-raw/subcortical/
+
+# Published source volume is tracked: 52K, and without it the build script
+# cannot be re-run from a fresh clone.
+!data-raw/source/*.nii.gz

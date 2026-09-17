@@ -1,14 +1,14 @@
 Package: ggsegAicha
 Title: AICHA Atlas for the 'ggseg' Ecosystem
-Version: 2.0.2
+Version: 2.1.0
 Authors@R: c(person("Athanasia Mo", "Mowinckel",
                     email = "a.m.mowinckel@psykologi.uio.no",
                     role = c("aut", "cre"),
                     comment = c(ORCID = "0000-0002-5756-0223")))
 Description: AICHA (Atlas of Intrinsic Connectivity of Homotopic Areas) atlas
-    for the 'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object with
-    both 2D polygon geometry and 3D vertex indices, for use with 'ggseg' and
-    'ggseg3d'.
+    for the 'ggseg' ecosystem. Provides cortical and subcortical 'ggseg_atlas'
+    objects with 2D polygon geometry and 3D vertex or mesh data, for use with
+    'ggseg' and 'ggseg3d'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends:
@@ -28,5 +28,5 @@ Remotes:
 URL: https://github.com/ggsegverse/ggsegAicha
 BugReports: https://github.com/ggsegverse/ggsegAicha/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.0
