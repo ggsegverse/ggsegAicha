@@ -1,5 +1,14 @@
 # Changelog
 
+## ggsegAicha 2.1.0
+
+- Added
+  [`aicha_sub()`](https://ggseg.github.io/ggsegAicha/reference/aicha_sub.md),
+  the subcortical half of the AICHA parcellation: 20 parcels per
+  hemisphere across amygdala, caudate, pallidum, putamen and thalamus,
+  drawn in two coronal and two axial views on a grey brain silhouette,
+  with 3D meshes.
+
 ## ggsegAicha 2.0.2
 
 - Atlas 2D geometry migrated to the sf-optional `brain_polygons` format

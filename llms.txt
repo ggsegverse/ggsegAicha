@@ -1,6 +1,11 @@
 # ggsegAicha
 
-This package contains dataset for plotting the AICHA atlas for ggseg.
+This package contains datasets for plotting the AICHA atlas for ggseg:
+the cortical parcellation
+([`aicha()`](https://ggseg.github.io/ggsegAicha/reference/aicha.md), 342
+regions) and the subcortical one
+([`aicha_sub()`](https://ggseg.github.io/ggsegAicha/reference/aicha_sub.md),
+20 parcels per hemisphere).
 
 Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L, … &
 Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic connectivity of
@@ -41,6 +46,15 @@ plot(aicha())
 
 ![](reference/figures/README-aicha-1.png)
 
+## AICHA subcortical atlas
+
+``` r
+
+plot(aicha_sub())
+```
+
+![](reference/figures/README-aicha-sub-1.png)
+
 ## Data source
 
 Joliot M, Jobard G, Naveau M, Delcroix N, Petit L, Zago L, … &
@@ -55,4 +69,6 @@ Brain atlases bundled in this package
 
 - [`aicha()`](https://ggseg.github.io/ggsegAicha/reference/aicha.md) :
   AICHA Atlas (Atlas of Intrinsic Connectivity of Homotopic Areas)
+- [`aicha_sub()`](https://ggseg.github.io/ggsegAicha/reference/aicha_sub.md)
+  : AICHA Subcortical Atlas
 

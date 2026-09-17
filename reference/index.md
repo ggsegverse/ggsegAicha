@@ -6,3 +6,5 @@ Brain atlases bundled in this package
 
 - [`aicha()`](https://ggseg.github.io/ggsegAicha/reference/aicha.md) :
   AICHA Atlas (Atlas of Intrinsic Connectivity of Homotopic Areas)
+- [`aicha_sub()`](https://ggseg.github.io/ggsegAicha/reference/aicha_sub.md)
+  : AICHA Subcortical Atlas

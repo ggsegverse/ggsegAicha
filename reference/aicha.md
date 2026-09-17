@@ -27,6 +27,11 @@ Tzourio-Mazoyer N (2015). AICHA: An atlas of intrinsic connectivity of
 homotopic areas. *Journal of Neuroscience Methods*, 254, 46-59.
 [doi:10.1016/j.jneumeth.2015.07.013](https://doi.org/10.1016/j.jneumeth.2015.07.013)
 
+## See also
+
+Other ggseg_atlases:
+[`aicha_sub()`](https://ggseg.github.io/ggsegAicha/reference/aicha_sub.md)
+
 ## Examples
 
 ``` r
