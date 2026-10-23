@@ -6,8 +6,8 @@
 # embedded into the fsaverage5 aseg with prepare_subcortical_mni152(), which
 # registers them through the fixed mni152.register.dat transform, replaces the
 # lumped aseg structures they subdivide, and returns a merged volume plus
-# colour table for the subcortical pipeline. aseg_context() then demotes the
-# surrounding brain to grey.
+# colour table for the subcortical pipeline, with the surrounding brain
+# declared as grey anatomical context.
 #
 # The 40 parcels (ids 345-384, 20 per hemisphere) cover amygdala, caudate,
 # pallidum, putamen and thalamus. The cortical half of AICHA is built
@@ -112,7 +112,7 @@ read_aicha_lut <- function() {
 # background the rest sits on and the only geometry present in every view.
 draw_order <- function(atlas) {
   drawn <- atlas_geom(atlas)$label
-  is_silhouette <- grepl("^cortex", drawn)
+  is_silhouette <- drawn %in% ggseg.formats::atlas_context(atlas)
   by_structure <- function(x) {
     x[order(
       toupper(sub("_(Left|Right)$", "", x)),
@@ -165,11 +165,31 @@ raw <- create_subcortical_from_volume(
 # not, since dilating it closes the sulci. Simplify before smoothing, or the
 # dropped vertices put the voxel staircase back.
 aicha_sub <- raw |>
-  aseg_context(focus = paste(lut$label, collapse = "|"), match_on = "label") |>
+  # `prepare_subcortical_mni152()` declares every `aseg` structure it kept as
+  # context, the cerebral white matter included, so the inside of the cortical
+  # ribbon arrives filled in and reads as a blob. Punch it out, then drop the
+  # structures this atlas does not want behind its parcels. The punch comes
+  # first: remove the white matter and there is nothing left to subtract.
+# Only the cerebral white matter goes; the cerebellar white matter stays, or
+# the cerebellum thins to a sliver instead of reading as a solid structure.
+  ggseg.formats::atlas_region_op(
+    x = "Cerebral-Cortex$",
+    y = "Cerebral-White-Matter$",
+    action = "difference",
+    into = "cortex"
+  ) |>
+  ggseg.formats::atlas_region_remove(
+    paste(
+      "Cerebral-Cortex$", "Cerebral-White-Matter", "WM-hypointensities",
+      "-Ventricle", "-Vent$", "CSF", "choroid-plexus", "vessel", "CC_",
+      sep = "|"
+    ),
+    match_on = "label"
+  ) |>
   atlas_view_gather() |>
-  atlas_dilate(0.6, exclude = "^cortex") |>
-  atlas_simplify(keep = 0.2, labels = "^cortex") |>
-  atlas_simplify(keep = 0.25, exclude = "^cortex") |>
+  atlas_dilate(0.6, exclude = ggseg.formats::context()) |>
+  atlas_simplify(keep = 0.2, labels = ggseg.formats::context()) |>
+  atlas_simplify(keep = 0.25, exclude = ggseg.formats::context()) |>
   atlas_smooth(smoothness = 0.4) |>
   draw_order()
 
